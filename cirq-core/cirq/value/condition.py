@@ -27,7 +27,7 @@ if TYPE_CHECKING:
 
 
 class Condition(abc.ABC):
-    """A classical control condition that can gate an operation."""
+    """A classical condition that can be used to control an operation."""
 
     @property
     @abc.abstractmethod

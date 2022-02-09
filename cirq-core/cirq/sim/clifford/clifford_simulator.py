@@ -125,6 +125,8 @@ class CliffordTrialResult(
         'clifford.CliffordState', 'clifford.ActOnStabilizerCHFormArgs'
     ]
 ):
+    """The results of a Clifford simulation."""
+
     def __init__(
         self,
         params: 'cirq.ParamResolver',
@@ -152,7 +154,7 @@ class CliffordTrialResult(
 class CliffordSimulatorStepResult(
     simulator_base.StepResultBase['cirq.CliffordState', 'cirq.ActOnStabilizerCHFormArgs']
 ):
-    """A `StepResult` that includes `StateVectorMixin` methods."""
+    """A `cirq.StepResult` that includes `cirq.CliffordState` methods."""
 
     def __init__(
         self,

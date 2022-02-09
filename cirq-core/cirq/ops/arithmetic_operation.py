@@ -29,7 +29,7 @@ TSelf = TypeVar('TSelf', bound='ArithmeticOperation')
 
 
 class ArithmeticOperation(Operation, metaclass=abc.ABCMeta):
-    """A helper class for implementing reversible classical arithmetic.
+    """An abstract class for implementing reversible classical arithmetic.
 
     Child classes must override the `registers`, `with_registers`, and `apply`
     methods.

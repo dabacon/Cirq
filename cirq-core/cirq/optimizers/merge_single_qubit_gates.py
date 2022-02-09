@@ -26,7 +26,7 @@ if TYPE_CHECKING:
 
 
 class MergeSingleQubitGates(circuits.PointOptimizer):
-    """Optimizes runs of adjacent unitary 1-qubit operations."""
+    """Optimizes runs of adjacent unitary 1-qubit operations by merging them."""
 
     def __init__(
         self,

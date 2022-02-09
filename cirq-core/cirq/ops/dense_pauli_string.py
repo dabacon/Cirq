@@ -57,7 +57,7 @@ TCls = TypeVar('TCls', bound='BaseDensePauliString')
 
 @value.value_equality(approximate=True, distinct_child_types=True)
 class BaseDensePauliString(raw_types.Gate, metaclass=abc.ABCMeta):
-    """Parent class for `DensePauliString` and `MutableDensePauliString`."""
+    """Parent class for `cirq.DensePauliString` and `cirq.MutableDensePauliString`."""
 
     I_VAL = 0
     X_VAL = 1
@@ -378,6 +378,8 @@ class BaseDensePauliString(raw_types.Gate, metaclass=abc.ABCMeta):
 
 
 class DensePauliString(BaseDensePauliString):
+    """An immutable dense representation of a Pauli string."""
+
     def frozen(self) -> 'DensePauliString':
         return self
 
@@ -396,6 +398,8 @@ class DensePauliString(BaseDensePauliString):
 
 @value.value_equality(unhashable=True, approximate=True)
 class MutableDensePauliString(BaseDensePauliString):
+    """A mutable dense representation of a Pauli string."""
+
     def __setitem__(self, key, value):
         if isinstance(key, int):
             self.pauli_mask[key] = _pauli_index(value)

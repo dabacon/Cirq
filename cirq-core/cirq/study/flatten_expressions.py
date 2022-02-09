@@ -310,8 +310,7 @@ class _ParamFlattener(resolver.ParamResolver):
 
 
 class ExpressionMap(dict):
-    """A dictionary with sympy expressions and symbols for keys and sympy
-    symbols for values.
+    """A dictionary with sympy expressions and symbols for keys and sympy symbols for values.
 
     This is returned by `cirq.flatten`.  See `ExpressionMap.transform_sweep` and
     `ExpressionMap.transform_params`.

@@ -47,7 +47,7 @@ ObjectFactory = Union[Type, Callable[..., Any]]
 
 
 class JsonResolver(Protocol):
-    """Protocol for json resolver functions passed to read_json."""
+    """Protocol for json resolver functions passed to `cirq.read_json`."""
 
     def __call__(self, cirq_type: str) -> Optional[ObjectFactory]:
         ...

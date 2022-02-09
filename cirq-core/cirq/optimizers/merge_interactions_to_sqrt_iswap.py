@@ -28,7 +28,9 @@ if TYPE_CHECKING:
 
 
 class MergeInteractionsToSqrtIswap(merge_interactions.MergeInteractionsAbc):
-    """Combines series of adjacent one- and two-qubit, non-parametrized gates
+    """A `cirq.PointOptimizer` that merges one gates into a minimal number of sqrt of iSWAP gates.
+
+    Combines series of adjacent one- and two-qubit, non-parametrized gates
     operating on a pair of qubits and replaces each series with the minimum
     number of SQRT_ISWAP gates.
 

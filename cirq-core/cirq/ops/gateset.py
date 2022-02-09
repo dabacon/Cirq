@@ -31,7 +31,7 @@ def _gate_str(
 
 @value.value_equality(distinct_child_types=True)
 class GateFamily:
-    """Wrapper around gate instances/types describing a set of accepted gates.
+    """Wrapper around gate instances/types describing a set of gates.
 
     GateFamily supports initialization via
         a) Non-parameterized instances of `cirq.Gate` (Instance Family).

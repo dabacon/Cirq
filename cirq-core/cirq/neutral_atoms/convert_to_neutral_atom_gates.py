@@ -26,10 +26,10 @@ if TYPE_CHECKING:
 
 
 class ConvertToNeutralAtomGates(PointOptimizer):
-    """Attempts to convert gates into native Atom gates.
+    """Attempts to convert gates into native neutral atom gates.
 
-    First, checks if the given operation is already a native neutral atom
-    operation.
+    First, checks if the given operation is already a native neutral atom operation
+        as define by `cirq.neutral_atom_gateset`.
 
     Second, checks if the operation has a known unitary. If so, and the gate
         is a 1-qubit or 2-qubit gate, then performs circuit synthesis of the
@@ -39,7 +39,8 @@ class ConvertToNeutralAtomGates(PointOptimizer):
     Third, attempts to `cirq.decompose` to the operation.
 
     Fourth, if ignore_failures is set, gives up and returns the gate unchanged.
-        Otherwise raises a TypeError.
+
+    Otherwise, raises a TypeError.
     """
 
     def __init__(self, ignore_failures=False) -> None:

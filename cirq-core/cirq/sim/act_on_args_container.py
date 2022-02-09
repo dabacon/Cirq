@@ -45,7 +45,7 @@ class ActOnArgsContainer(
     OperationTarget[TActOnArgs],
     abc.Mapping,
 ):
-    """A container for a `Qid`-to-`ActOnArgs` dictionary."""
+    """A container for a `cirq.Qid`-to-`cirq.ActOnArgs` dictionary."""
 
     def __init__(
         self,

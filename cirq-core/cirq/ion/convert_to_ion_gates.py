@@ -19,7 +19,10 @@ from cirq.ion import ms, two_qubit_matrix_to_ion_operations, ion_device
 
 
 class ConvertToIonGates:
-    """Attempts to convert non-native gates into IonGates."""
+    """Attempts to convert non-native gates into ion trap gates.
+
+    Ion trap gates are those returned by `cirq.get_ion_gateset`.
+    """
 
     def __init__(self, ignore_failures: bool = False) -> None:
         """Inits ConvertToIonGates.

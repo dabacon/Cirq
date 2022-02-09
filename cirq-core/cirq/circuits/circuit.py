@@ -72,6 +72,8 @@ _DEVICE_DEP_MESSAGE = 'Attaching devices to circuits will no longer be supported
 
 
 class Alignment(enum.Enum):
+    """An enum describing the alignment of circuits when zipping or tetris concatenating them."""
+
     # Stop when left ends are lined up.
     LEFT = 1
     # Stop when right ends are lined up.

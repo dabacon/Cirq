@@ -57,6 +57,8 @@ class GlobalPhaseOperation(gate_operation.GateOperation):
 
 @value.value_equality(approximate=True)
 class GlobalPhaseGate(raw_types.Gate):
+    """A gate representing the no-op of a global phase."""
+
     def __init__(self, coefficient: value.Scalar, atol: float = 1e-8) -> None:
         if abs(1 - abs(coefficient)) > atol:
             raise ValueError(f'Coefficient is not unitary: {coefficient!r}')

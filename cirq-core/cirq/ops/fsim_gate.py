@@ -54,7 +54,7 @@ def _half_pi_mod_pi(param: Union[float, sympy.Basic]) -> bool:
 
 @value.value_equality(approximate=True)
 class FSimGate(gate_features.InterchangeableQubitsGate, raw_types.Gate):
-    """Fermionic simulation gate family.
+    """A gate that arises naturally in fermionic simulations that preserve excitations.
 
     Contains all two qubit interactions that preserve excitations, up to
     single-qubit rotations and global phase.

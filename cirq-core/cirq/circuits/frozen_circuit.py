@@ -43,7 +43,7 @@ _DEVICE_DEP_MESSAGE = 'Attaching devices to circuits will no longer be supported
 
 
 class FrozenCircuit(AbstractCircuit, protocols.SerializableByKey):
-    """An immutable version of the Circuit data structure.
+    """An immutable version of the `cirq.Circuit` data structure.
 
     FrozenCircuits are immutable (and therefore hashable), but otherwise behave
     identically to regular Circuits. Conversion between the two is handled with

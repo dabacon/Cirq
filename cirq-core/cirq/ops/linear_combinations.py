@@ -57,7 +57,7 @@ document(
 
 
 class LinearCombinationOfGates(value.LinearDict[raw_types.Gate]):
-    """Represents linear operator defined by a linear combination of gates.
+    """Represents a linear operator defined by a linear combination of gates.
 
     Suppose G1, G2, ..., Gn are gates and b1, b2, ..., bn are complex
     numbers. Then
@@ -203,7 +203,7 @@ class LinearCombinationOfGates(value.LinearDict[raw_types.Gate]):
 
 
 class LinearCombinationOfOperations(value.LinearDict[raw_types.Operation]):
-    """Represents operator defined by linear combination of gate operations.
+    """Represents an operator defined by linear combination of gate operations.
 
     If G1, ..., Gn are gate operations, {q1_1, ..., q1_k1}, {q2_1, ..., q2_k2},
     ..., {qn_1, ..., qn_kn} are (not necessarily disjoint) sets of qubits and

@@ -175,7 +175,7 @@ class _QubitAsQid(Qid):
 
 
 class Gate(metaclass=value.ABCMetaImplementAnyOneOf):
-    """An operation type that can be applied to a collection of qubits.
+    """A object that can be applied to a collection of qubits.
 
     Gates can be applied to qubits by calling their on() method with
     the qubits to be applied to supplied, or, alternatively, by simply

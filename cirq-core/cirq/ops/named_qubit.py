@@ -44,7 +44,7 @@ class _BaseNamedQid(raw_types.Qid):
 
 
 class NamedQid(_BaseNamedQid):
-    """A qid identified by name.
+    """A qid identified by name (a string).
 
     By default, `NamedQid` has a lexicographic order. However, numbers within
     the name are handled correctly. So, for example, if you print a circuit
@@ -104,7 +104,7 @@ class NamedQid(_BaseNamedQid):
 
 
 class NamedQubit(_BaseNamedQid):
-    """A qubit identified by name.
+    """A qubit identified by name (a string).
 
     By default, `NamedQubit` has a lexicographic order. However, numbers within
     the name are handled correctly. So, for example, if you print a circuit

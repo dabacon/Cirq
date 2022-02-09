@@ -381,7 +381,7 @@ def depolarize(p: float, n_qubits: int = 1) -> DepolarizingChannel:
 
 @value.value_equality
 class GeneralizedAmplitudeDampingChannel(gate_features.SingleQubitGate):
-    """Dampen qubit amplitudes through non ideal dissipation.
+    """A channel that dampens qubit amplitudes through non-ideal dissipation.
 
     This channel models the effect of energy dissipation into the environment
     as well as the environment depositing energy into the system.
@@ -542,7 +542,7 @@ def generalized_amplitude_damp(p: float, gamma: float) -> GeneralizedAmplitudeDa
 
 @value.value_equality
 class AmplitudeDampingChannel(gate_features.SingleQubitGate):
-    """Dampen qubit amplitudes through dissipation.
+    """A channel that dampens qubit amplitudes through dissipation.
 
     This channel models the effect of energy dissipation to the
     surrounding environment.
@@ -656,7 +656,7 @@ def amplitude_damp(gamma: float) -> AmplitudeDampingChannel:
 
 @value.value_equality
 class ResetChannel(gate_features.SingleQubitGate):
-    """Reset a qubit back to its |0⟩ state.
+    """A channel that resets a qubit back to its |0⟩ state.
 
     The reset channel is equivalent to performing an unobserved measurement
     which then controls a bit flip onto the targeted qubit.
@@ -783,7 +783,7 @@ def reset_each(*qubits: 'cirq.Qid') -> List[raw_types.Operation]:
 
 @value.value_equality
 class PhaseDampingChannel(gate_features.SingleQubitGate):
-    """Dampen qubit phase.
+    """A channel that dampens a qubit's phase.
 
     This channel models phase damping which is the loss of quantum
     information without the loss of energy.
@@ -896,7 +896,7 @@ def phase_damp(gamma: float) -> PhaseDampingChannel:
 
 @value.value_equality
 class PhaseFlipChannel(gate_features.SingleQubitGate):
-    """Probabilistically flip the sign of the phase of a qubit."""
+    """A channel that probabilistically flips the sign of the phase of a qubit."""
 
     def __init__(self, p: float) -> None:
         r"""The phase flip channel.
@@ -1049,7 +1049,7 @@ def phase_flip(p: Optional[float] = None) -> Union[common_gates.ZPowGate, PhaseF
 
 @value.value_equality
 class BitFlipChannel(gate_features.SingleQubitGate):
-    r"""Probabilistically flip a qubit from 1 to 0 state or vice versa."""
+    r"""A channel that probabilistically flips a qubit from |1⟩ to |0⟩ state or vice versa."""
 
     def __init__(self, p: float) -> None:
         r"""The bit flip channel.

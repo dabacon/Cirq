@@ -264,7 +264,7 @@ class DensityMatrixSimulator(
 class DensityMatrixStepResult(
     simulator_base.StepResultBase['cirq.DensityMatrixSimulatorState', 'cirq.ActOnDensityMatrixArgs']
 ):
-    """A single step in the simulation of the DensityMatrixSimulator.
+    """A single step in the simulation of the `cirq.DensityMatrixSimulator`.
 
     Attributes:
         measurements: A dictionary from measurement gate key to measurement
@@ -367,7 +367,7 @@ class DensityMatrixStepResult(
 
 @value.value_equality(unhashable=True)
 class DensityMatrixSimulatorState:
-    """The simulator state for DensityMatrixSimulator
+    """The simulator state for `cirq.DensityMatrixSimulator`.
 
     Args:
         density_matrix: The density matrix of the simulation.
@@ -400,7 +400,7 @@ class DensityMatrixTrialResult(
         'DensityMatrixSimulatorState', act_on_density_matrix_args.ActOnDensityMatrixArgs
     ]
 ):
-    """A `SimulationTrialResult` for `DensityMatrixSimulator` runs.
+    """A `cirq.SimulationTrialResultBase` for `cirq.DensityMatrixSimulator` runs.
 
     The density matrix that is stored in this result is returned in the
     computational basis with these basis states defined by the qubit_map.

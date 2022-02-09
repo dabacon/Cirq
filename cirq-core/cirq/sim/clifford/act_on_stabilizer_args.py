@@ -29,7 +29,7 @@ if TYPE_CHECKING:
 
 
 class ActOnStabilizerArgs(ActOnArgs, metaclass=abc.ABCMeta):
-    """Abstract wrapper around a stabilizer state for the act_on protocol."""
+    """Abstract wrapper around a stabilizer state for the `cirq.act_on` protocol."""
 
     def _act_on_fallback_(
         self,

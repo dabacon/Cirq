@@ -1050,6 +1050,8 @@ class SingleQubitPauliStringGateOperation(  # type: ignore
 
 @value.value_equality(unhashable=True, manual_cls=True, approximate=True)
 class MutablePauliString(Generic[TKey]):
+    """A mutable Pauli string."""
+
     def __init__(
         self,
         *contents: 'cirq.PAULI_STRING_LIKE',

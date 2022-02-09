@@ -21,7 +21,7 @@ MEASUREMENT_KEY_SEPARATOR = ':'
 
 @dataclasses.dataclass(frozen=True)
 class MeasurementKey:
-    """A class representing a Measurement Key.
+    """A class representing a key used to identify a measurement.
 
     Wraps a string key. If you just want the string measurement key, simply call `str()` on this.
 

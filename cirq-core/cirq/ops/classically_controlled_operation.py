@@ -35,7 +35,7 @@ if TYPE_CHECKING:
 
 @value.value_equality
 class ClassicallyControlledOperation(raw_types.Operation):
-    """Augments existing operations to be conditionally executed.
+    """A `cirq.Operation` that is conditionally executed depending on classical data.
 
     An operation that is classically controlled is executed iff all conditions
     evaluate to True. Currently the only condition type is a measurement key.

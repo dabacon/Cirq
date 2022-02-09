@@ -21,7 +21,7 @@ from cirq._compat import deprecated_class
 
 @deprecated_class(deadline='v1.0', fix='Use cirq.align_right(circuit, context) instead')
 class AlignRight:
-    """Aligns gates to the right of the circuit."""
+    """Aligns gates to the right (later) of the circuit."""
 
     def __call__(self, circuit: circuits.Circuit):
         self.optimize_circuit(circuit)

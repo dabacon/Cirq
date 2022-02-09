@@ -21,7 +21,7 @@ from cirq import protocols
 
 
 class AnyUnitaryGateFamily(gateset.GateFamily):
-    """GateFamily which accepts any N-Qubit unitary gate."""
+    """`cirq.GateFamily` which accepts any n-qubit unitary gate."""
 
     def __init__(self, num_qubits: Optional[int] = None) -> None:
         """Init AnyUnitaryGateFamily
@@ -62,7 +62,7 @@ class AnyUnitaryGateFamily(gateset.GateFamily):
 
 
 class AnyIntegerPowerGateFamily(gateset.GateFamily):
-    """GateFamily which accepts instances of a given `cirq.EigenGate`, raised to integer power."""
+    """`cirq.GateFamily` which accepts instances of `cirq.EigenGate`, raised to integer power."""
 
     def __init__(self, gate: Type[eigen_gate.EigenGate]) -> None:
         """Init AnyIntegerPowerGateFamily

@@ -28,7 +28,7 @@ if TYPE_CHECKING:
 
 @value.value_equality
 class IdentityGate(raw_types.Gate):
-    """A Gate that perform no operation on qubits.
+    """A gate that perform no operation on qubits.
 
     The unitary matrix of this gate is a diagonal matrix with all 1s on the
     diagonal and all 0s off the diagonal in any basis.

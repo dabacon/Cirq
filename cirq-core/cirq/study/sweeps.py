@@ -401,7 +401,7 @@ class Linspace(SingleSweep):
 
 
 class ListSweep(Sweep):
-    """A wrapper around a list of `ParamResolver`s."""
+    """A wrapper around a list of `cirq.ParamResolver`s."""
 
     def __init__(self, resolver_list: Iterable[resolver.ParamResolverOrSimilarType]):
         """Creates a `Sweep` over a list of `ParamResolver`s.

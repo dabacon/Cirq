@@ -77,7 +77,7 @@ def _format_terms(terms: Iterable[Tuple[TVector, Scalar]], format_spec: str):
 
 
 class LinearDict(Generic[TVector], MutableMapping[TVector, Scalar]):
-    """Represents linear combination of things.
+    """Represents a linear combination of objects.
 
     LinearDict implements the basic linear algebraic operations of vector
     addition and scalar multiplication for linear combinations of abstract

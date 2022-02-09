@@ -27,8 +27,7 @@ if TYPE_CHECKING:
 
 
 class MergeInteractionsAbc(circuits.PointOptimizer, metaclass=abc.ABCMeta):
-    """Combines series of adjacent one- and two-qubit, non-parametrized gates
-    operating on a pair of qubits."""
+    """Abstract class for a `cirq.PointOptimizer` that merges one and two qubit operations.s"""
 
     def __init__(
         self,
@@ -207,9 +206,12 @@ def _flip_kron_order(mat4x4: np.ndarray) -> np.ndarray:
 
 
 class MergeInteractions(MergeInteractionsAbc):
-    """Combines series of adjacent one- and two-qubit, non-parametrized gates
+    """A `cirq.PointOptimizer` that merges one gates into a minimal number of CZs.
+
+    Combines series of adjacent one- and two-qubit, non-parametrized gates
     operating on a pair of qubits and replaces each series with the minimum
-    number of CZ gates."""
+    number of CZ gates.
+    """
 
     def __init__(
         self,

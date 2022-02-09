@@ -176,7 +176,7 @@ def _is_exposed_formula(text: str) -> bool:
 
 @value.value_equality
 class CircuitDiagramInfoArgs:
-    """A request for information on drawing an operation in a circuit diagram.
+    """Options for drawing an operation in a circuit diagram.
 
     Attributes:
         known_qubits: The qubits the gate is being applied to. None means this
@@ -312,7 +312,7 @@ class SupportsCircuitDiagramInfo(Protocol):
         receiving object doesn't specify diagram info.
 
         Args:
-            args: A DiagramInfoArgs instance encapsulating various pieces of
+            args: A `cirq.CircuitDiagramInfoArgs` instance encapsulating various pieces of
                 information (e.g. how many qubits are we being applied to) as
                 well as user options (e.g. whether to avoid unicode characters).
 

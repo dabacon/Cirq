@@ -716,7 +716,7 @@ class Rz(ZPowGate):
 
 
 class HPowGate(eigen_gate.EigenGate, gate_features.SingleQubitGate):
-    """A Gate that performs a rotation around the X+Z axis of the Bloch sphere.
+    """A gate that performs a rotation around the X+Z axis of the Bloch sphere.
 
     The unitary matrix of ``HPowGate(exponent=t)`` is:
 

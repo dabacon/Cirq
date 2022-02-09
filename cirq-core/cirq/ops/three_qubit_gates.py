@@ -49,7 +49,7 @@ if TYPE_CHECKING:
 
 
 class CCZPowGate(gate_features.InterchangeableQubitsGate, eigen_gate.EigenGate):
-    """A doubly-controlled-Z that can be raised to a power.
+    """A doubly-controlled-Z gate that can be raised to a power.
 
     The matrix of `CCZ**t` is `diag(1, 1, 1, 1, 1, 1, 1, exp(i pi t))`.
     """
@@ -366,7 +366,7 @@ class ThreeQubitDiagonalGate(raw_types.Gate):
 
 
 class CCXPowGate(gate_features.InterchangeableQubitsGate, eigen_gate.EigenGate):
-    """A Toffoli (doubly-controlled-NOT) that can be raised to a power.
+    """A Toffoli (doubly-controlled-NOT) gate that can be raised to a power.
 
     The matrix of `CCX**t` is an 8x8 identity except the bottom right 2x2 area
     is the matrix of `X**t`.
@@ -496,7 +496,7 @@ class CCXPowGate(gate_features.InterchangeableQubitsGate, eigen_gate.EigenGate):
 
 @value.value_equality()
 class CSwapGate(gate_features.InterchangeableQubitsGate, raw_types.Gate):
-    """A controlled swap gate. The Fredkin gate."""
+    """A controlled swap gate. Also known as the Fredkin gate."""
 
     def qubit_index_to_equivalence_group_key(self, index):
         return 0 if index == 0 else 1

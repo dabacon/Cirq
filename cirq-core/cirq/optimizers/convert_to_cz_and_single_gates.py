@@ -19,8 +19,7 @@ from cirq.transformers.analytical_decompositions import two_qubit_to_cz
 
 
 class ConvertToCzAndSingleGates(circuits.PointOptimizer):
-    """Attempts to convert strange multi-qubit gates into CZ and single qubit
-    gates.
+    """Attempts to convert multi-qubit gates into CZ and single qubit gates.
 
     First, checks if the operation has a unitary effect. If so, and the gate is
         a 1-qubit or 2-qubit gate, then performs circuit synthesis of the
@@ -29,7 +28,8 @@ class ConvertToCzAndSingleGates(circuits.PointOptimizer):
     Second, attempts to `cirq.decompose` to the operation.
 
     Third, if ignore_failures is set, gives up and returns the gate unchanged.
-        Otherwise raises a TypeError.
+
+    Otherwise, raises a TypeError.
     """
 
     def __init__(self, ignore_failures: bool = False, allow_partial_czs: bool = False) -> None:

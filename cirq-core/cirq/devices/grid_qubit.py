@@ -124,7 +124,7 @@ class _BaseGridQid(ops.Qid):
 
 
 class GridQid(_BaseGridQid):
-    """A qid on a 2d square lattice
+    """A qid on a 2d square lattice.
 
     GridQid uses row-major ordering:
 
