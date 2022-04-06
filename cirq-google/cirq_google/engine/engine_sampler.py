@@ -110,7 +110,7 @@ class QuantumEngineSampler(cirq.Sampler):
     deadline='v0.15',
     fix='Remove the "gate_set_name" parameter.',
     parameter_desc='gate_set_name',
-    match=lambda args, kwargs: 'gate_set_name' in kwargs or len(args) > 1
+    match=lambda args, kwargs: 'gate_set_name' in kwargs or len(args) > 1,
 )
 def get_engine_sampler(
     processor_id: str, gate_set_name: str = '', project_id: Optional[str] = None

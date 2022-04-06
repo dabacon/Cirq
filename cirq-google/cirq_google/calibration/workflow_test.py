@@ -1021,9 +1021,7 @@ def test_run_calibrations():
     engine = mock.MagicMock(spec=cirq_google.Engine)
     engine.run_calibration.return_value = job
 
-    sampler = cirq_google.QuantumEngineSampler(
-        engine=engine, processor_id='qproc'
-    )
+    sampler = cirq_google.QuantumEngineSampler(engine=engine, processor_id='qproc')
 
     progress_calls = []
 
@@ -1127,9 +1125,7 @@ def test_run_characterization_with_engine():
     def progress(step: int, steps: int) -> None:
         progress_calls.append((step, steps))
 
-    actual = workflow.run_calibrations(
-        [request], engine, 'qproc', progress_func=progress
-    )
+    actual = workflow.run_calibrations([request], engine, 'qproc', progress_func=progress)
 
     expected = [
         PhasedFSimCalibrationResult(

@@ -940,9 +940,7 @@ def test_run_calibration(client):
         'readout', cirq.Circuit(cirq.measure(q1, q2)), {'num_samples': 4242}
     )
     processor = cg.EngineProcessor('proj', 'mysim', EngineContext())
-    job = processor.run_calibration(
-        layers=[layer1, layer2], job_id='job-id'
-    )
+    job = processor.run_calibration(layers=[layer1, layer2], job_id='job-id')
     results = job.calibration_results()
     assert len(results) == 2
     assert results[0].code == v2.calibration_pb2.SUCCESS

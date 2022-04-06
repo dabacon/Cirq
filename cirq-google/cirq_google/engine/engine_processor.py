@@ -119,8 +119,7 @@ class EngineProcessor(abstract_processor.AbstractProcessor):
             when sampled.1
         """
         return engine_sampler.QuantumEngineSampler(
-            engine=self.engine(),
-            processor_id=self.processor_id
+            engine=self.engine(), processor_id=self.processor_id
         )
 
     @util.deprecated_gate_set_parameter
