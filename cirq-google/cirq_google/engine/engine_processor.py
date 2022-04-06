@@ -26,6 +26,7 @@ from cirq_google.engine import (
     calibration,
     calibration_layer,
     engine_sampler,
+    util,
 )
 from cirq_google.serialization import serializable_gate_set, serializer
 from cirq_google.serialization import gate_sets as gs
@@ -101,6 +102,7 @@ class EngineProcessor(abstract_processor.AbstractProcessor):
 
         return engine_base.Engine(self.project_id, context=self.context)
 
+    @util.deprecated_gate_set_parameter
     def get_sampler(
         self,
         gate_set: Optional[serializer.Serializer] = None,
@@ -118,10 +120,10 @@ class EngineProcessor(abstract_processor.AbstractProcessor):
         """
         return engine_sampler.QuantumEngineSampler(
             engine=self.engine(),
-            processor_id=self.processor_id,
-            gate_set=gate_set,
+            processor_id=self.processor_id
         )
 
+    @util.deprecated_gate_set_parameter
     def run_batch(
         self,
         programs: Sequence[cirq.AbstractCircuit],
@@ -180,13 +182,13 @@ class EngineProcessor(abstract_processor.AbstractProcessor):
             program_id=program_id,
             params_list=list(params_list) if params_list is not None else None,
             repetitions=repetitions,
-            gate_set=gate_set,
             program_description=program_description,
             program_labels=program_labels,
             job_description=job_description,
             job_labels=job_labels,
         )
 
+    @util.deprecated_gate_set_parameter
     def run_calibration(
         self,
         layers: List[calibration_layer.CalibrationLayer],
@@ -237,13 +239,13 @@ class EngineProcessor(abstract_processor.AbstractProcessor):
             processor_id=self.processor_id,
             program_id=program_id,
             job_id=job_id,
-            gate_set=gate_set,
             program_description=program_description,
             program_labels=program_labels,
             job_description=job_description,
             job_labels=job_labels,
         )
 
+    @util.deprecated_gate_set_parameter
     def run_sweep(
         self,
         program: cirq.Circuit,
@@ -293,7 +295,6 @@ class EngineProcessor(abstract_processor.AbstractProcessor):
             job_id=job_id,
             params=params,
             repetitions=repetitions,
-            gate_set=gate_set,
             program_description=program_description,
             program_labels=program_labels,
             job_description=job_description,

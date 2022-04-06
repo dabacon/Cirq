@@ -22,7 +22,7 @@ import datetime
 from typing import Dict, List, Optional, Sequence, Set, Union
 
 import cirq
-from cirq_google.engine import abstract_job, abstract_program, abstract_processor
+from cirq_google.engine import abstract_job, abstract_program, abstract_processor, util
 from cirq_google.engine.client import quantum
 from cirq_google.serialization import Serializer
 
@@ -125,6 +125,7 @@ class AbstractEngine(abc.ABC):
         """
 
     @abc.abstractmethod
+    @util.deprecated_gate_set_parameter
     def get_sampler(
         self, processor_id: Union[str, List[str]], gate_set: Optional[Serializer] = None
     ) -> cirq.Sampler:

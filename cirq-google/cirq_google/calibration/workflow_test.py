@@ -1022,7 +1022,7 @@ def test_run_calibrations():
     engine.run_calibration.return_value = job
 
     sampler = cirq_google.QuantumEngineSampler(
-        engine=engine, processor_id='qproc', gate_set=cirq_google.FSIM_GATESET
+        engine=engine, processor_id='qproc'
     )
 
     progress_calls = []
@@ -1128,7 +1128,7 @@ def test_run_characterization_with_engine():
         progress_calls.append((step, steps))
 
     actual = workflow.run_calibrations(
-        [request], engine, 'qproc', cirq_google.FSIM_GATESET, progress_func=progress
+        [request], engine, 'qproc', progress_func=progress
     )
 
     expected = [
@@ -1160,7 +1160,7 @@ def test_run_characterization_with_engine():
 
 
 def test_run_calibrations_empty():
-    assert workflow.run_calibrations([], None, 'qproc', cirq_google.FSIM_GATESET) == []
+    assert workflow.run_calibrations([], None, 'qproc') == []
 
 
 def test_run_calibrations_fails_when_invalid_arguments():
@@ -1289,7 +1289,7 @@ def test_run_floquet_characterization_for_moments():
     engine.run_calibration.return_value = job
 
     circuit_with_calibration, requests = workflow.run_floquet_characterization_for_moments(
-        circuit, engine, 'qproc', cirq_google.FSIM_GATESET, options=options
+        circuit, engine, 'qproc', options=options
     )
 
     assert requests == [
@@ -1630,7 +1630,6 @@ def test_run_zeta_chi_gamma_calibration_for_moments() -> None:
         circuit,
         engine_simulator,
         processor_id=None,
-        gate_set=cirq_google.FSIM_GATESET,
         options=options,
     )
 
@@ -1671,7 +1670,7 @@ def test_run_zeta_chi_gamma_calibration_for_moments_no_chi() -> None:
     )
 
     calibrated_circuit, *_ = workflow.run_zeta_chi_gamma_compensation_for_moments(
-        circuit, engine_simulator, processor_id=None, gate_set=cirq_google.SQRT_ISWAP_GATESET
+        circuit, engine_simulator, processor_id=None
     )
 
     assert cirq.allclose_up_to_global_phase(
