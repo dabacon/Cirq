@@ -71,6 +71,8 @@ TEST_CASES = (
     (float, 1.0, {'arg_value': {'float_value': 1.0}}),
     (str, 'abc', {'arg_value': {'string_value': 'abc'}}),
     (float, 1, {'arg_value': {'float_value': 1.0}}),
+    (float, np.int64(1), {'arg_value': {'float_value': 1.0}}),
+    (float, np.float32(1), {'arg_value': {'float_value': 1.0}}),
     (List[bool], [True, False], {'arg_value': {'bool_values': {'values': [True, False]}}}),
     (List[bool], (True, False), {'arg_value': {'bool_values': {'values': [True, False]}}}),
     (
@@ -186,6 +188,17 @@ def test_to_proto_unsupported_type():
     q = cirq.GridQubit(1, 2)
     with pytest.raises(ValueError, match='bytes'):
         serializer.to_proto(GateWithProperty(b's')(q))
+
+
+def test_to_unsupported_float_type():
+    serializer = cg.GateOpSerializer(
+        gate_type=GateWithAttribute,
+        serialized_gate_id='my_gate',
+        args=[cg.SerializingArg(serialized_name='my_val', serialized_type=float, op_getter='val')],
+    )
+    q = cirq.GridQubit(1, 2)
+    with pytest.raises(ValueError, match='convertible to float'):
+        serializer.to_proto(GateWithAttribute(1 + 1j)(q))
 
 
 def test_to_proto_named_qubit_supported():
