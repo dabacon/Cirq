@@ -42,7 +42,7 @@ import sympy
 
 import cirq
 from cirq import protocols, value
-from cirq._compat import proper_repr
+from cirq._compat import deprecated, proper_repr
 from cirq._doc import document
 from cirq.ops import controlled_gate, eigen_gate, gate_features, raw_types
 
@@ -1192,16 +1192,19 @@ class CXPowGate(eigen_gate.EigenGate):
         )
 
 
+@deprecated(deadline='v0.15', fix='Use cirq.Rx')
 def rx(rads: value.TParamVal) -> Rx:
     """Returns a gate with the matrix e^{-i X rads / 2}."""
     return Rx(rads=rads)
 
 
+@deprecated(deadline='v0.15', fix='Use cirq.Ry')
 def ry(rads: value.TParamVal) -> Ry:
     """Returns a gate with the matrix e^{-i Y rads / 2}."""
     return Ry(rads=rads)
 
 
+@deprecated(deadline='v0.15', fix='Use cirq.Rz')
 def rz(rads: value.TParamVal) -> Rz:
     """Returns a gate with the matrix e^{-i Z rads / 2}."""
     return Rz(rads=rads)

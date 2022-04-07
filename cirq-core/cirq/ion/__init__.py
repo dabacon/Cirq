@@ -15,6 +15,7 @@
 """Trapped ion devices, gates, and compiling utilties."""
 
 from cirq.ion.ion_gates import (
+    MSGate,
     ms,
 )
 

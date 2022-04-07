@@ -19,6 +19,7 @@ import numpy as np
 
 from cirq import ops, value
 from cirq import protocols
+from cirq._compat import deprecated
 
 if TYPE_CHECKING:
     import cirq
@@ -58,8 +59,8 @@ class MSGate(ops.XXPowGate):
 
     def __repr__(self) -> str:
         if self._exponent == 1:
-            return 'cirq.ms(np.pi/2)'
-        return f'cirq.ms({self._exponent!r}*np.pi/2)'
+            return 'cirq.MSGate(rads=np.pi/2)'
+        return f'cirq.MSGate(rads={self._exponent!r}*np.pi/2)'
 
     def _json_dict_(self) -> Dict[str, Any]:
         return protocols.obj_to_dict_helper(self, ["rads"])
@@ -69,6 +70,7 @@ class MSGate(ops.XXPowGate):
         return cls(rads=rads)
 
 
+@deprecated(deadline='v0.15', fix='Use cirq.MSGate')
 def ms(rads: float) -> MSGate:
     """A helper to construct the `cirq.MSGate` for the given angle specified in radians.
 
