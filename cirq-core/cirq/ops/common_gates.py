@@ -619,6 +619,12 @@ class ZPowGate(eigen_gate.EigenGate, gate_features.SingleQubitGate):
             return args.format('s {0};\n', qubits[0])
         elif self._exponent == -0.5:
             return args.format('sdg {0};\n', qubits[0])
+        elif self._exponent == 0.25:
+            return args.format('t {0};\n', qubits[0])
+        elif self._exponent == -0.25:
+            return args.format('tdg {0};\n', qubits[0])
+        elif self._exponent == 0:
+            return args.format('i {0};\n', qubits[0])
 
         return args.format('rz({0:half_turns}) {1};\n', self._exponent, qubits[0])
 
