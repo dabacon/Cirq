@@ -12,15 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from typing import AbstractSet, Any, Dict, Iterator, Optional, Sequence, Tuple, TYPE_CHECKING, Union
 import numbers
+from typing import AbstractSet, Any, Dict, Iterator, Optional, Sequence, Tuple, TYPE_CHECKING, Union
 
 import numpy as np
 import sympy
 
-from cirq import value, ops, protocols, linalg
-from cirq.ops import raw_types
+from cirq import linalg, ops, protocols, value
 from cirq._compat import proper_repr
+from cirq.ops import raw_types
 
 if TYPE_CHECKING:
     import cirq
@@ -72,7 +72,7 @@ class PhasedXZGate(raw_types.Gate):
     def from_zyz_angles(cls, z0_rad: float, y_rad: float, z1_rad: float) -> 'cirq.PhasedXZGate':
         """Create a PhasedXZGate from ZYZ angles.
 
-        The returned gate is equivalent to $Rz(z0_rad) Ry(y_rad) Rz(z1_rad)$ (in time order).
+        The returned gate is equivalent to $Rz(z0\_rad) Ry(y\_rad) Rz(z1\_rad)$ (in time order).
         """
         return cls.from_zyz_exponents(z0=z0_rad / np.pi, y=y_rad / np.pi, z1=z1_rad / np.pi)
 
